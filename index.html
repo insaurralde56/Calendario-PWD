@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📅 Calendario Interactivo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1 class="title">📆 Calendario Interactivo</h1>
+
+  <div class="calendar-container">
+    <div class="calendar">
+      <div class="calendar__info">
+        <button class="calendar__prev" id="prev-month">&#10094;</button>
+        <div>
+          <div class="calendar__month" id="month">Enero</div>
+          <div class="calendar__year" id="year">2025</div>
+        </div>
+        <button class="calendar__next" id="next-month">&#10095;</button>
+      </div>
+
+      <div class="calendar-week">
+        <div class="calendar__day">Dom</div>
+        <div class="calendar__day">Lun</div>
+        <div class="calendar__day">Mar</div>
+        <div class="calendar__day">Mié</div>
+        <div class="calendar__day">Jue</div>
+        <div class="calendar__day">Vie</div>
+        <div class="calendar__day">Sáb</div>
+      </div>
+
+      <div class="calendar_dates" id="dates"></div>
+    </div>
+
+    <div class="events">
+      <h2>Eventos y Feriados</h2>
+      <div id="event-list"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

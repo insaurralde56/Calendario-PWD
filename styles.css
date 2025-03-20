@@ -1,0 +1,226 @@
+body {
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  text-align: center;
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.calendar-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.calendar {
+  width: 380px;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.calendar:hover {
+  transform: translateY(-5px);
+}
+
+.calendar__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f2f5;
+}
+
+.calendar__month, .calendar__year {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.calendar__prev, .calendar__next {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.calendar__prev:hover, .calendar__next:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.calendar-week {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #7f8c8d;
+}
+
+.calendar__day {
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.calendar_dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.day {
+  padding: 15px 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day:hover {
+  background-color: #ecf0f1;
+  transform: scale(1.1);
+}
+
+/* Día actual */
+.today {
+  background-color: #3498db;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.today:hover {
+  background-color: #2980b9;
+}
+
+/* Fines de semana */
+.weekend {
+  background-color: #f8f9fa;
+  color: #e74c3c;
+}
+
+/* Festivos */
+.holiday {
+  background-color: #f1c40f;
+  font-weight: 700;
+  color: #34495e;
+  position: relative;
+}
+
+.holiday::after {
+  content: "🎉";
+  position: absolute;
+  font-size: 8px;
+  top: 3px;
+  right: 3px;
+}
+
+/* Evento */
+.event {
+  background-color: #2ecc71;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+}
+
+.event.holiday {
+  background: linear-gradient(135deg, #2ecc71 50%, #f1c40f 50%);
+}
+
+.empty {
+  visibility: hidden;
+}
+
+.events {
+  width: 380px;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.events h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-weight: 700;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f2f5;
+}
+
+.event-item {
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #3498db;
+  color: white;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.event-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.event-item.holiday {
+  background-color: #f1c40f;
+  color: #34495e;
+}
+
+.event-item span {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.event-item .delete-event {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 16px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-item.holiday .delete-event {
+  color: #34495e;
+}
+
+.event-item .delete-event:hover {
+  background-color: rgba(231, 76, 60, 0.8);
+  color: white;
+  transform: rotate(90deg);
+}
